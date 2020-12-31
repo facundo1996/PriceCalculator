@@ -1,0 +1,54 @@
+/* BODY */
+.body{
+    background-color: white ;
+    margin: 0 auto;
+    height: 100%;
+}
+
+/* COINTAINER DIV TOTAL */
+.container_div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container_div h1{
+    margin-top: 50px;
+}
+
+/* FORM */
+.form_div{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    border-radius: 10%;
+    border: solid black 5px;
+    padding: 5%;
+    margin-bottom: 50px;
+}
+
+.form_div label{
+    margin-top: 20px;
+}
+
+.form_div input{
+
+}
+
+.products{
+    
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    border-radius: 10%;
+    border: solid black 5px;
+    padding: 5%;
+    margin-bottom: 100px;
+}
+.product{
+    
+}
+.product h3{
+    
+}
