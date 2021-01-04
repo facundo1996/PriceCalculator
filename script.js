@@ -32,6 +32,8 @@ document.getElementById('create').addEventListener('click', function(){
         document.getElementById('products').innerHTML+=innHTML
     }
     recipe = []
+
+    document.getElementById("products").style.display="block"
 });
 
 /* Calculate the price of what you used */
@@ -87,6 +89,8 @@ document.getElementById('add').addEventListener('click', function(){
         let innHTML = "";
         innHTML += "<p>"+ingredient[0]+" "+ingredient[3]+"gr - $"+ingredient[4]+"°°</p>"
         document.getElementById('product'+last_array).innerHTML+=innHTML
+
+        document.getElementById("finish").style.display="block"
     }
 });
 

@@ -46,9 +46,11 @@
     padding: 5%;
     margin-bottom: 100px;
 }
-.product{
-    
+.finish_product_button{
+    display: none;
 }
-.product h3{
-    
+
+/* Products */
+.products{
+    display: none;
 }
