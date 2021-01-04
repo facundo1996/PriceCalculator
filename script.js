@@ -116,9 +116,13 @@ document.getElementById('finish').addEventListener('click', function(){
 
 });
 
-/* Delete the product */
+/* Delete the product (also from the list) */
 const remove = b => {
     let parent = document.getElementById('products')
     let child = b.parentElement
+
+    let number_list = parseInt(child.id.slice(-1))
+    recipes.splice(number_list,1)
+
     parent.removeChild(child)
 } 
