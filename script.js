@@ -34,4 +34,22 @@ document.getElementById('create').addEventListener('click', function(){
     recipe = []
 });
 
-    
+/* Calculate the price of what you used */
+document.getElementById('calculated').addEventListener('click', function(){
+    if (document.getElementById('ingredient').value === "") {
+        alert("Falta el nombre del ingrediente/producto")
+    }else if (document.getElementById('price').value === "") {
+        alert("Falta el precio del producto")
+    }else if (document.getElementById('totally').value === "") {
+        alert("Falta el total del producto")
+    }else if (document.getElementById('used').value === "") {
+        alert("Falta la cantidad que utilizo")
+    }
+    else {
+        let price = document.getElementById('price').value;
+        let totally = document.getElementById('totally').value;
+        let used = document.getElementById('used').value;
+        let result =(used*price)/totally;
+        document.getElementById('result').value = result;
+    }
+});
