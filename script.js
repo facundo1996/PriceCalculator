@@ -53,3 +53,39 @@ document.getElementById('calculated').addEventListener('click', function(){
         document.getElementById('result').value = result;
     }
 });
+
+/* Add an ingredient to the recipe */
+document.getElementById('add').addEventListener('click', function(){
+    if(document.getElementById('result').value === ""){
+        alert("Falta calcular el producto")
+    }
+    else{
+        ingredient = [
+            document.getElementById('ingredient').value,
+            document.getElementById('price').value,
+            document.getElementById('totally').value,
+            document.getElementById('used').value,
+            document.getElementById('result').value
+        ];
+        
+        let last_array = recipes.length - 1 ;
+        
+        recipes[last_array].push(ingredient);
+        
+        /* Sum the totally */
+        let valor_quetiene = parseFloat(document.getElementById('totally_number'+last_array).value)
+        document.getElementById('totally_number'+last_array).value = parseFloat(valor_quetiene) + parseFloat(document.getElementById('result').value)
+        
+        console.log(recipes);
+        
+        document.getElementById('ingredient').value = ""
+        document.getElementById('price').value = ""
+        document.getElementById('totally').value = ""
+        document.getElementById('used').value = ""
+        document.getElementById('result').value = ""
+
+        let innHTML = "";
+        innHTML += "<p>"+ingredient[0]+" "+ingredient[3]+"gr - $"+ingredient[4]+"°°</p>"
+        document.getElementById('product'+last_array).innerHTML+=innHTML
+    }
+});
