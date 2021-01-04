@@ -89,3 +89,32 @@ document.getElementById('add').addEventListener('click', function(){
         document.getElementById('product'+last_array).innerHTML+=innHTML
     }
 });
+
+/* Finished current product */
+document.getElementById('finish').addEventListener('click', function(){
+    document.getElementById('name').readOnly = false
+    document.getElementById("create").style.display="block"
+    document.getElementById('name').value = ""
+
+    let last_array = recipes.length - 1
+ 
+    /* Put the summary in a <p> and  add the delete button*/
+    let innHTML = "";
+    innHTML += "<p class='font-weight-bold'>El total gastado: "+document.getElementById('totally_number'+last_array).value+"</p> <button onclick='remove(this)'>Eliminar</button> "
+    innHTML += "<hr>"
+    document.getElementById('product'+last_array).innerHTML+=innHTML
+
+
+    /* Delete the summary */
+    let input2 = document.getElementById('totally'+last_array)
+    let parent = input2.parentNode
+    parent.removeChild(input2)
+
+});
+
+/* Delete the product */
+const remove = b => {
+    let parent = document.getElementById('products')
+    let child = b.parentElement
+    parent.removeChild(child)
+} 
