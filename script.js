@@ -104,7 +104,7 @@ document.getElementById('finish').addEventListener('click', function(){
  
     /* Put the summary in a <p> and  add the delete button*/
     let innHTML = "";
-    innHTML += "<p class='font-weight-bold'>El total gastado: "+document.getElementById('totally_number'+last_array).value+"</p> <button class='btn btn-dark' onclick='remove(this)'>Eliminar</button> "
+    innHTML += "<p class='font-weight-bold'>El total gastado: "+document.getElementById('totally_number'+last_array).value+"</p> <button class='btn btn-dark' onclick='save(this)'>Guardar receta</button> <button class='btn btn-dark' onclick='remove(this)'>Eliminar</button> "
     innHTML += "<hr>"
     document.getElementById('product'+last_array).innerHTML+=innHTML
 
@@ -113,8 +113,11 @@ document.getElementById('finish').addEventListener('click', function(){
     let input2 = document.getElementById('totally'+last_array)
     let parent = input2.parentNode
     parent.removeChild(input2)
+    
+    document.getElementById("finish").style.display="none"
+    
+}); 
 
-});
 
 /* Delete the product (also from the list) */
 const remove = b => {
@@ -127,7 +130,7 @@ const remove = b => {
     let name_screen = document.getElementById('product'+number_list).childNodes[1].innerHTML;
     /* let name_list = recipes[number_list][0][0]; */
     
-    recipes = recipes.filter(s => s[0][0] != name_screen)
+    recipes = recipes.filter(recipes_filter => recipes_filter[0][0] != name_screen)
     
     parent.removeChild(child)
     console.log(recipes)
@@ -135,5 +138,19 @@ const remove = b => {
     if(recipes.length === 0 ){
         document.getElementById("products").style.display="none"
     }
+
+}
+
+const save = x => {
+    let parent = document.getElementById('products').innerHTML;
     
-} 
+    let numerical_counter = 0
+    
+    while (localStorage.getItem('local_recipes'+numerical_counter)){
+        numerical_counter = numerical_counter+1
+    }
+    localStorage.setItem('local_recipes'+numerical_counter, parent)
+    remove(x)
+}
+
+document.getElementById('records')
