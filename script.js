@@ -118,21 +118,21 @@ document.getElementById('finish').addEventListener('click', function(){
 
 /* Delete the product (also from the list) */
 const remove = b => {
-    let parent = document.getElementById('products')
-    let child = b.parentElement
+    let parent = document.getElementById('products');
+    let child = b.parentElement;
+    
+    
+    let number_list = parseInt(child.id.slice(-1));
+    
+    let name_screen = document.getElementById('product'+number_list).childNodes[1].innerHTML;
+    /* let name_list = recipes[number_list][0][0]; */
+    
+    recipes = recipes.filter(s => s[0][0] != name_screen)
+    
+    parent.removeChild(child)
+    console.log(recipes)
 
-    let number_list = parseInt(child.id.slice(-1))
-
-    if(recipes.length > 1){
-        recipes.splice(number_list,1)
-        parent.removeChild(child)
-    }
-    else if (recipes.length === 1) {
-        recipes = []
-        parent.removeChild(child)
-    }
-
-    if (recipes.length === 0){
+    if(recipes.length === 0 ){
         document.getElementById("products").style.display="none"
     }
     
