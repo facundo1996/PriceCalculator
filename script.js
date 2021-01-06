@@ -14,7 +14,7 @@ window.addEventListener('load',function(){
        
 
         let innHTML = "";
-        innHTML += "<div id='recipe_record"+numerical_counter+"'>"+localStorage.getItem('local_recipes'+numerical_counter)+"<button onclick='remove_local(this)'>Eliminar</button><hr></div>";
+        innHTML += "<div id='recipe_record"+numerical_counter+"'>"+localStorage.getItem('local_recipes'+numerical_counter)+"<button class='btn btn-dark' onclick='remove_local(this)'>Eliminar</button><hr></div>";
         document.getElementById('records').innerHTML+=innHTML
         
 

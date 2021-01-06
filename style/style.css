@@ -3,7 +3,15 @@
     background-color: white ;
     margin: 0 auto;
     height: 100%;
+    margin-top: 20px;
 }
+
+/* HELP */
+.input_help{
+    width: 50px;
+    position: fixed;
+}
+
 
 /* COINTAINER DIV TOTAL */
 .container_div{
