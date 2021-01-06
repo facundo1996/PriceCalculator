@@ -122,7 +122,7 @@ document.getElementById('finish').addEventListener('click', function(){
  
     /* Put the summary in a <p> and  add the delete button*/
     let innHTML = "";
-    innHTML += "<p class='font-weight-bold'>El total gastado: "+document.getElementById('totally_number'+last_array).value+"</p> <button class='btn btn-dark' onclick='save(this)'>Guardar receta</button> <button class='btn btn-dark' onclick='remove(this)'>Eliminar</button> "
+    innHTML += "<p class='font-weight-bold'>El total gastado: $"+document.getElementById('totally_number'+last_array).value+"</p> <button class='btn btn-dark' onclick='save(this)'>Guardar receta</button> <button class='btn btn-dark' onclick='remove(this)'>Eliminar</button> "
     innHTML += "<hr>"
     document.getElementById('product'+last_array).innerHTML+=innHTML
 

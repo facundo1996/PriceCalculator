@@ -37,13 +37,13 @@
 }
 
 .form_div input{
-    width: auto;
+    
 }
 
 .products{
     display: flex;
     flex-direction: column;
-    width: 400px;
+    
     border-radius: 10%;
     border: solid black 5px;
     padding: 5%;
@@ -65,7 +65,7 @@
     margin-top: 50px;
     
     flex-direction: column;
-    width: 400px;
+    
     border-radius: 10%;
     border: solid black 5px;
     padding: 5%;
