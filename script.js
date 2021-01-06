@@ -4,6 +4,24 @@ let recipes = [];
 /* Contains a recipe */
 let recipe = [];
 
+/* load saved recipes */
+window.addEventListener('load',function(){
+    let numerical_counter = 0
+    if (localStorage.length > 0){
+        document.getElementById("records").style.display="block"
+    }
+    while (localStorage.getItem('local_recipes'+numerical_counter)){
+       
+
+        let innHTML = "";
+        innHTML += "<div id='recipe_record"+numerical_counter+"'>"+localStorage.getItem('local_recipes'+numerical_counter)+"<button onclick='remove_local(this)'>Eliminar</button><hr></div>";
+        document.getElementById('records').innerHTML+=innHTML
+        
+
+        numerical_counter = numerical_counter+1
+    }
+})
+
 /* Create the final product list */
 document.getElementById('create').addEventListener('click', function(){
     
@@ -147,6 +165,7 @@ const save = x => {
     /* Delete Buttons */
     child_html.removeChild(child_html.childNodes[child_html.childNodes.length - 3 ])
     child_html.removeChild(child_html.childNodes[child_html.childNodes.length - 4 ])
+    child_html.removeChild(child_html.childNodes[child_html.childNodes.length - 1 ])
     
     /* Save in local storage */
     let numerical_counter = 0
@@ -172,9 +191,21 @@ const save = x => {
     
 
     let innHTML = "";
-    innHTML += "<div id='recipe_record"+numerical_counter+"'>"+localStorage.getItem('local_recipes'+numerical_counter)+"</div>";
+    innHTML += "<div id='recipe_record"+numerical_counter+"'>"+localStorage.getItem('local_recipes'+numerical_counter)+"<button onclick='remove_local(this)'>Eliminar</button><hr></div>";
     document.getElementById('records').innerHTML+=innHTML
 
 }
 
 
+const remove_local = g => {
+    let parent = document.getElementById('records');
+    let child_html = g.parentElement
+    
+    localStorage.removeItem('local_recipes'+child_html.id.slice(-1))
+    parent.removeChild(child_html)
+
+    if (localStorage.length === 0){
+        document.getElementById("records").style.display="none"
+    }
+
+}
