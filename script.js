@@ -142,15 +142,39 @@ const remove = b => {
 }
 
 const save = x => {
-    let parent = document.getElementById('products').innerHTML;
+    let parent = document.getElementById('products');
+    let child_html = x.parentElement
+    /* Delete Buttons */
+    child_html.removeChild(child_html.childNodes[child_html.childNodes.length - 3 ])
+    child_html.removeChild(child_html.childNodes[child_html.childNodes.length - 4 ])
     
+    /* Save in local storage */
     let numerical_counter = 0
-    
     while (localStorage.getItem('local_recipes'+numerical_counter)){
         numerical_counter = numerical_counter+1
     }
-    localStorage.setItem('local_recipes'+numerical_counter, parent)
-    remove(x)
+    localStorage.setItem('local_recipes'+numerical_counter,child_html.innerHTML)
+    
+    /* code copied from the remove function */
+    let number_list = parseInt(child_html.id.slice(-1));
+    let name_screen = document.getElementById('product'+number_list).childNodes[1].innerHTML;
+    recipes = recipes.filter(recipes_filter => recipes_filter[0][0] != name_screen)
+
+
+    /* Delete HTML */
+    parent.removeChild(child_html)
+    /* History appears */
+    document.getElementById("records").style.display="block"
+    
+    if(recipes.length === 0 ){
+        document.getElementById("products").style.display="none"
+    }
+    
+
+    let innHTML = "";
+    innHTML += "<div id='recipe_record"+numerical_counter+"'>"+localStorage.getItem('local_recipes'+numerical_counter)+"</div>";
+    document.getElementById('records').innerHTML+=innHTML
+
 }
 
-document.getElementById('records')
+

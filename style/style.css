@@ -54,3 +54,20 @@
 .products{
     display: none;
 }
+
+/* DIV Records */
+.records_form{
+    display: none;
+
+    margin-top: 50px;
+    
+    flex-direction: column;
+    width: 400px;
+    border-radius: 10%;
+    border: solid black 5px;
+    padding: 5%;
+    margin-bottom: 50px;
+}
+.records_form h2{
+    color: white;
+}
