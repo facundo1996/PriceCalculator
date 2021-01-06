@@ -14,6 +14,9 @@
 
 .container_div h1{
     margin-top: 50px;
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+
 }
 
 /* FORM */
@@ -30,6 +33,7 @@
 
 .form_div label{
     margin-top: 20px;
+    font-family: 'Anton', sans-serif;
 }
 
 .form_div input{
@@ -68,6 +72,8 @@
     padding: 5%;
     margin-bottom: 50px;
 }
-.records_form h2{
-    color: white;
+.records_form h1{
+    font-family: 'Orbitron', sans-serif;
+    border-bottom: black 4px solid;
+    padding-bottom: 10px;
 }
