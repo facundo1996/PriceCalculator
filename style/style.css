@@ -92,14 +92,14 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.493);
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     
 }
 
 .close_help{
-    width: 30px;
+    width: 20px;
     position: fixed;
     display: block;
     top: 4%;
@@ -117,20 +117,17 @@
     
 }
 
-/* 
-.contenedor {
-    margin: 2rem auto;
-    border: 1px solid #aaa;
-    height: 300px;
-    width:90%;
-    max-width: 400px;
-    background: #f1f2f3;
-    overflow:auto;
-    box-sizing: border-box;
-    padding:0 1rem;
-} */
+.first_step{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Anton', sans-serif;
+}
+.first_step img{
+    width: 70%;
+}
 
-/* Estilos para motores Webkit y blink (Chrome, Safari, Opera... )*/
+/* Horizontal scroll bar */
 
 .help_div2::-webkit-scrollbar {
     -webkit-appearance: none;
@@ -156,29 +153,4 @@
 
 .help_div2::-webkit-scrollbar-track {
     border-radius: 10px;  
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.first_step{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: 'Anton', sans-serif;
-}
-.first_step img{
-    width: 70%;
 }
