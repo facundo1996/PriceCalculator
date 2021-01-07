@@ -106,8 +106,8 @@
 }
 
 .help_div2{
-    width: 80%;
-    height: 80%;
+    width: 60%;
+    height: 70%;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -123,10 +123,22 @@
     font-family: 'Anton', sans-serif;
 }
 .first_step img{
-    width: 70%;
+    width: 60%;
 }
 
-/* Horizontal scroll bar */
+.example_text{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+.example_text p{
+    
+}
+
+/* Horizontal scroll bar HELP*/
 
 .help_div2::-webkit-scrollbar {
     -webkit-appearance: none;
