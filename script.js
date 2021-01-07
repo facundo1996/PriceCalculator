@@ -196,7 +196,7 @@ const save = x => {
 
 }
 
-
+/* Delete the recipe from the localstorage */
 const remove_local = g => {
     let parent = document.getElementById('records');
     let child_html = g.parentElement
@@ -209,3 +209,12 @@ const remove_local = g => {
     }
 
 }
+
+/* Help buttom */
+document.getElementById('help').addEventListener('click', function(){
+    document.getElementById("help_div").style.display="flex"
+})
+
+document.getElementById('close_help').addEventListener('click', function(){
+    document.getElementById("help_div").style.display="none"
+})
