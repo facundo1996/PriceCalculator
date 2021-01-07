@@ -48,10 +48,11 @@ document.getElementById('create').addEventListener('click', function(){
         innHTML += "<div id='product"+last_array+"' class='product'> <h3 id='h3'>"+document.getElementById('name').value+"</h3></div>"
         innHTML += "<div id='totally"+last_array+"' class='product'> <input id='totally_number"+last_array+"' readOnly value='0'></div>"
         document.getElementById('products').innerHTML+=innHTML
+        document.getElementById("products").style.display="block"
     }
     recipe = []
 
-    document.getElementById("products").style.display="block"
+    
 });
 
 /* Calculate the price of what you used */
@@ -70,7 +71,7 @@ document.getElementById('calculated').addEventListener('click', function(){
         let totally = document.getElementById('totally').value;
         let used = document.getElementById('used').value;
         let result =(used*price)/totally;
-        document.getElementById('result').value = result;
+        document.getElementById('result').value = parseFloat(result).toFixed(2);
     }
 });
 
