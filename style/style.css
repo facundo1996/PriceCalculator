@@ -134,9 +134,7 @@
     padding-left: 20%;
     padding-right: 20%;
 }
-.example_text p{
-    
-}
+
 
 /* Horizontal scroll bar HELP*/
 
@@ -164,4 +162,18 @@
 
 .help_div2::-webkit-scrollbar-track {
     border-radius: 10px;  
+}
+
+
+@media (max-width: 768px) {
+    .example_text p{
+        font-size: 15px;
+    }
+    .example_text{
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    .first_step img{
+        width: 75%;
+    }
 }
