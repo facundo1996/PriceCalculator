@@ -166,6 +166,10 @@
 
 
 @media (max-width: 768px) {
+    .help_div2{
+        width: 75%;
+        height: 90%;
+    }
     .example_text p{
         font-size: 15px;
     }
