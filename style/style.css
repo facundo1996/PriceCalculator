@@ -25,22 +25,21 @@
 /* FORM */
 .form_div{
     margin-top: 50px;
+    margin-bottom: 50px;
     display: flex;
     flex-direction: column;
-    
     border: solid black 5px;
-    padding: 5%;
-    margin-bottom: 50px;
+    padding: 5%;   
+}
+
+.form_div input:invalid{
+    border :red solid 3px ;
+    background-color: pink;
 }
 
 .form_div label{
     margin-top: 20px;
     font-family: 'Anton', sans-serif; 
-}
-
-
-.form_div input{
-    
 }
 
 .products{
@@ -55,6 +54,9 @@
 .finish_product_button{
     display: none;
 }
+
+.calculated_button{display: none;}
+.result_input{display: none;}
 
 /* Products */
 .products{
@@ -78,6 +80,9 @@
     font-family: 'Orbitron', sans-serif;
     border-bottom: black 4px solid;
     padding-bottom: 10px;
+}
+.add_button{
+    display: none;
 }
 
 /* HELP */

@@ -27,11 +27,14 @@ document.getElementById('create').addEventListener('click', function(){
     
     /* name validation */
     if (document.getElementById('name').value === "") {
-        alert("Ingresa un nombre correcto")
+        document.getElementById('name').style.background="pink"
     }
     else{
         /* Create the product and save it to the recipe list */
         let product1 = [document.getElementById('name').value];
+        document.getElementById('name').style.background="white"
+        document.getElementById("calculated").style.display="block"
+        document.getElementById("result").style.display="block"
     
         recipe.push(product1);
         recipes.push(recipe)
@@ -57,21 +60,40 @@ document.getElementById('create').addEventListener('click', function(){
 
 /* Calculate the price of what you used */
 document.getElementById('calculated').addEventListener('click', function(){
+    let price = document.getElementById('price').value
+    let totally = document.getElementById('totally').value
+    let used = document.getElementById('used').value
+
     if (document.getElementById('ingredient').value === "") {
-        alert("Falta el nombre del ingrediente/producto")
-    }else if (document.getElementById('price').value === "") {
-        alert("Falta el precio del producto")
-    }else if (document.getElementById('totally').value === "") {
-        alert("Falta el total del producto")
-    }else if (document.getElementById('used').value === "") {
-        alert("Falta la cantidad que utilizo")
+        document.getElementById('ingredient').style.background="pink"
+        document.getElementById('price').style.background="white"
+        document.getElementById('totally').style.background="white"
+        document.getElementById('used').style.background="white"
+    }else if (price === "") {
+        document.getElementById('price').style.background="pink"
+        document.getElementById('ingredient').style.background="white"
+        document.getElementById('totally').style.background="white"
+        document.getElementById('used').style.background="white"
+        
+    }else if (totally === "") {
+        document.getElementById('totally').style.background="pink"
+        document.getElementById('ingredient').style.background="white"
+        document.getElementById('price').style.background="white"
+        document.getElementById('used').style.background="white"
+    }else if (used === "") {
+        document.getElementById('used').style.background="pink"
+        document.getElementById('ingredient').style.background="white"
+        document.getElementById('price').style.background="white"
+        document.getElementById('totally').style.background="white"
     }
     else {
-        let price = document.getElementById('price').value;
-        let totally = document.getElementById('totally').value;
-        let used = document.getElementById('used').value;
         let result =(used*price)/totally;
         document.getElementById('result').value = parseFloat(result).toFixed(2);
+        document.getElementById("add").style.display="block"
+        document.getElementById('ingredient').style.background="white"
+        document.getElementById('price').style.background="white"
+        document.getElementById('totally').style.background="white"
+        document.getElementById('used').style.background="white"
     }
 });
 
@@ -110,6 +132,7 @@ document.getElementById('add').addEventListener('click', function(){
         document.getElementById('product'+last_array).innerHTML+=innHTML
 
         document.getElementById("finish").style.display="block"
+        document.getElementById("add").style.display="none"
     }
 });
 
@@ -134,6 +157,8 @@ document.getElementById('finish').addEventListener('click', function(){
     parent.removeChild(input2)
     
     document.getElementById("finish").style.display="none"
+    document.getElementById("calculated").style.display="none"
+    document.getElementById("result").style.display="none"
     
 }); 
 
@@ -192,7 +217,7 @@ const save = x => {
     
 
     let innHTML = "";
-    innHTML += "<div id='recipe_record"+numerical_counter+"'>"+localStorage.getItem('local_recipes'+numerical_counter)+"<button onclick='remove_local(this)'>Eliminar</button><hr></div>";
+    innHTML += "<div id='recipe_record"+numerical_counter+"'>"+localStorage.getItem('local_recipes'+numerical_counter)+"<button class='btn btn-dark' onclick='remove_local(this)'>Eliminar</button><hr></div>";
     document.getElementById('records').innerHTML+=innHTML
 
 }
